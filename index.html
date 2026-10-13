@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigiShiksha - Internet Basics for First-Gen Learners</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#059669" />
+</head>
+<body>
+  <header>
+    <div class="logo-area" onclick="switchPage('page1')" style="cursor: pointer;">
+      <h1>🌐 DigiShiksha PWA</h1>
+      <span class="badge">Digital Literacy Edition</span>
+    </div>
+    <nav>
+      <button id="nav-page1" class="active" onclick="switchPage('page1')">🏠 Home</button>
+      <button id="nav-page2" onclick="switchPage('page2')">🛠️ Practice Tools</button>
+      <button id="nav-page3" onclick="switchPage('page3')">📚 Learning Guides</button>
+      <button id="nav-page4" onclick="switchPage('page4')">🎯 Quiz & Help</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PAGE 1: OVERVIEW & COMMUNITY FIELD INSIGHTS -->
+    <section id="page1" class="page active">
+      <div class="card hero-banner">
+        <h2>Community Digital Literacy Initiative</h2>
+        <p>
+          Designed for <strong>First-Generation Internet Learners</strong> (seniors, rural-to-urban migrants, and non-tech background community members). 
+          This tool breaks down the complex digital world into easy, visual, and fear-free internet building blocks.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Field Survey: Key Challenges Faced by Beginners</h2>
+        <p>Observed pain-points and obstacles during ground community interactions with beginner learners:</p>
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="number text-danger">74.2%</div>
+            <div class="label">Fear of Financial Loss / Wrong Click Panic</div>
+          </div>
+          <div class="stat-box">
+            <div class="number text-warning">61.5%</div>
+            <div class="label">Confused Between Search Engine & Browser</div>
+          </div>
+          <div class="stat-box">
+            <div class="number text-info">82.0%</div>
+            <div class="label">Depend Heavily on Voice Search / Typing Barrier</div>
+          </div>
+          <div class="stat-box">
+            <div class="number text-danger">58.7%</div>
+            <div class="label">Inability to Identify Fake Download Buttons / Ads</div>
+          </div>
+          <div class="stat-box">
+            <div class="number text-warning">48.3%</div>
+            <div class="label">Trouble Managing Mobile Data & Wi-Fi Toggles</div>
+          </div>
+          <div class="stat-box">
+            <div class="number text-success">89.4%</div>
+            <div class="label">Eager to Learn Online Public Utility Services</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Core Pillars of Digital Literacy for Beginners</h2>
+        <div class="principles-grid">
+          <div class="principle-item">
+            <div class="p-icon">🔍</div>
+            <h4>Search vs. Address Bar</h4>
+            <p>Know when you are asking Google a question vs typing a direct official website URL (.gov.in / .edu).</p>
+          </div>
+          <div class="principle-item">
+            <div class="p-icon">🎙️</div>
+            <h4>Voice Search Empowerment</h4>
+            <p>Using vernacular microphone input so language or typing speed is never a barrier to knowledge.</p>
+          </div>
+          <div class="principle-item">
+            <div class="p-icon">💳</div>
+            <h4>Safe Online Utility Payments</h4>
+            <p>Recognizing official portals (electricity bill, train booking) without falling for sponsor phishing ads.</p>
+          </div>
+          <div class="principle-item">
+            <div class="p-icon">🛡️</div>
+            <h4>The "Never Share OTP" Rule</h4>
+            <p>Understanding that authentic customer care executives will never ask for bank PINs or SMS codes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2: INTERACTIVE PRACTICE TOOLS -->
+    <section id="page2" class="page">
+      <div class="card">
+        <h2>Interactive URL vs Search Query Simulator</h2>
+        <p>First-time learners often type web addresses into search engines or full sentences into URL bars. Test your understanding:</p>
+        <div class="sim-box">
+          <label for="input-query">Type what you want to do (e.g., <code>how to book train ticket</code> or <code>irctc.co.in</code>):</label>
+          <input 
+            type="text" 
+            id="input-query" 
+            placeholder="Type search query or website link..." 
+            oninput="analyzeQuery()" 
+            autocomplete="off" 
+          />
+          <div class="sim-result" id="sim-output">Type above to see how a smartphone browser interprets it.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Essential Internet Skills Checklist</h2>
+        <p>Tick off the practical digital tasks as you learn them with community support:</p>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="chk1" onchange="updateChecklist()" />
+            <label for="chk1">Can turn Mobile Data (4G/5G) and Wi-Fi on and off independently</label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk2" onchange="updateChecklist()" />
+            <label for="chk2">Knows how to use Google Voice Search (Mic icon) in native language</label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk3" onchange="updateChecklist()" />
+            <label for="chk3">Can differentiate between genuine organic search results and "Sponsored/Ad" links</label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk4" onchange="updateChecklist()" />
+            <label for="chk4">Knows how to download and view government digital documents via DigiLocker</label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk5" onchange="updateChecklist()" />
+            <label for="chk5">Knows how to scan a genuine merchant QR code on UPI without revealing UPI PIN to anyone</label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk6" onchange="updateChecklist()" />
+            <label for="chk6">Can recognize a secure website connection (Padlock / https:// icon)</label>
+          </li>
+        </ul>
+        <div class="progress-bar-container">
+          <div class="progress-text">Learning Progress: <span id="progress-val">0%</span></div>
+          <div class="progress-track"><div id="progress-bar" class="progress-fill"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: LEARNING GUIDES & MODULES -->
+    <section id="page3" class="page">
+      <div class="card">
+        <h2>Structured Learning Modules for Beginners</h2>
+        <p>Simple step-by-step roadmaps designed without complex jargon:</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="card guide-card">
+          <h3>📱 1. Understanding Internet Connectivity</h3>
+          <p>The difference between SIM mobile data balance and local Wi-Fi networks.</p>
+          <ul class="guide-steps">
+            <li><strong>Mobile Data (4G/5G):</strong> Provided by your telecom SIM card with a daily limit (e.g., 1.5 GB/day).</li>
+            <li><strong>Wi-Fi Connection:</strong> High-speed internet connected through a home or community router.</li>
+            <li><strong>Hotspot Sharing:</strong> How to share data with a family member's phone without wires.</li>
+            <li><strong>Airplane Mode:</strong> Quick reset for network connectivity issues.</li>
+          </ul>
+        </div>
+
+        <div class="card guide-card">
+          <h3>🌐 2. Web Browsers & Search Engines</h3>
+          <p>Navigating the internet safely without clicking misleading banners.</p>
+          <ul class="guide-steps">
+            <li><strong>Browser App (Chrome, Edge):</strong> The vehicle or door that takes you to websites.</li>
+            <li><strong>Search Engine (Google):</strong> The library index that helps you find things when you don't know the exact address.</li>
+            <li><strong>Spotting Ads:</strong> Look out for small bold tags saying <strong>"Sponsored"</strong> or <strong>"Ad"</strong> at the top of results.</li>
+            <li><strong>Browser Tabs:</strong> How to open multiple pages and close background tabs to save phone memory.</li>
+          </ul>
+        </div>
+
+        <div class="card guide-card">
+          <h3>🏛️ 3. Accessing Public Utility Services</h3>
+          <p>Using authentic government portals without middleman agent exploitation.</p>
+          <ul class="guide-steps">
+            <li><strong>DigiLocker:</strong> Paperless verified storage for Aadhaar, PAN card, and driving licenses.</li>
+            <li><strong>Electricity & Water Bills:</strong> Direct online payments via consumer number on official boards.</li>
+            <li><strong>Train & Bus Booking:</strong> Official IRCTC and state transport mobile applications.</li>
+            <li><strong>Check Domain Extensions:</strong> Genuine Indian government portals always end in <code>.gov.in</code> or <code>.nic.in</code>.</li>
+          </ul>
+        </div>
+
+        <div class="card guide-card">
+          <h3>⚠️ 4. Identifying Common Scams</h3>
+          <p>Critical red flags every first-generation learner must remember.</p>
+          <ul class="guide-steps">
+            <li><strong>Lottery / KBC Prize Scams:</strong> You cannot win a lottery that you never entered.</li>
+            <li><strong>PIN is ONLY for Sending Money:</strong> Entering your UPI PIN deducts money from your account, never receives it.</li>
+            <li><strong>Remote Access Apps:</strong> Never install apps like AnyDesk or TeamViewer on stranger instructions.</li>
+            <li><strong>KYC Expiry Threats:</strong> Banks never ask you to update details via random WhatsApp numbers.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: QUIZ & HELPLINES -->
+    <section id="page4" class="page">
+      <div class="card">
+        <h2>Interactive Digital Literacy Quiz</h2>
+        <p>Test your confidence with these 3 real-world scenarios:</p>
+        
+        <div class="quiz-container">
+          <div class="quiz-question" id="q1">
+            <p><strong>Q1: A stranger on the phone says: "Enter your UPI PIN to receive ₹500 cashback." What should you do?</strong></p>
+            <div class="quiz-options">
+              <button onclick="checkQuiz(1, false, this)">A) Enter the PIN quickly to get the money</button>
+              <button onclick="checkQuiz(1, true, this)">B) Disconnect immediately; PIN is only needed to pay or send money, never to receive</button>
+              <button onclick="checkQuiz(1, false, this)">C) Ask them to send ₹200 first</button>
+            </div>
+            <div class="quiz-ans" id="ans1"></div>
+          </div>
+
+          <div class="quiz-question" id="q2">
+            <p><strong>Q2: You want to open an official government website. Which URL ending is the safest?</strong></p>
+            <div class="quiz-options">
+              <button onclick="checkQuiz(2, false, this)">A) www.service-online.xyz</button>
+              <button onclick="checkQuiz(2, true, this)">B) www.myscheme.gov.in (ends with .gov.in)</button>
+              <button onclick="checkQuiz(2, false, this)">C) www.india-help.online</button>
+            </div>
+            <div class="quiz-ans" id="ans2"></div>
+          </div>
+
+          <div class="quiz-question" id="q3">
+            <p><strong>Q3: What should you do if an unknown pop-up on your phone says "Virus detected! Click here to clean"?</strong></p>
+            <div class="quiz-options">
+              <button onclick="checkQuiz(3, false, this)">A) Click the button immediately to clean the virus</button>
+              <button onclick="checkQuiz(3, false, this)">B) Forward the message to 5 WhatsApp friends</button>
+              <button onclick="checkQuiz(3, true, this)">C) Do not click! Close the browser tab or press Home button</button>
+            </div>
+            <div class="quiz-ans" id="ans3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Useful Public Helplines & Portals</h2>
+        <div class="helpline-box">
+          <div class="hl-item">
+            <span class="hl-title">Cyber Crime Reporting Helpline:</span>
+            <span class="hl-number">📞 Dial 1930</span>
+          </div>
+          <div class="hl-item">
+            <span class="hl-title">National Cybercrime Portal:</span>
+            <a href="https://cybercrime.gov.in" target="_blank" class="hl-link">🌐 cybercrime.gov.in</a>
+          </div>
+          <div class="hl-item">
+            <span class="hl-title">Digital India Official Learning:</span>
+            <a href="https://digitalindia.gov.in" target="_blank" class="hl-link">🌐 digitalindia.gov.in</a>
+          </div>
+          <div class="hl-item">
+            <span class="hl-title">Sanchar Saathi (Block Stolen Phone):</span>
+            <a href="https://sancharsaathi.gov.in" target="_blank" class="hl-link">🌐 sancharsaathi.gov.in</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Community Engagement Project • Teaching Internet Basics to First-Generation Learners • Academic Year 2026–2027
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
